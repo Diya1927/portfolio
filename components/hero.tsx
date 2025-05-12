@@ -61,7 +61,7 @@ export default function Hero() {
     <div
       className="relative h-screen w-full bg-cover bg-center"
       style={{
-        backgroundImage: `url('/images/e.jpg')`,
+        backgroundImage: `url('/images/d.jpg')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundColor: "#0f172a",
