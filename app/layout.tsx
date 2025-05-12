@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 export const metadata: Metadata = {
   title: "Madiha - AI/ML Anthusiast Developer",
   description:
-    "Portfolio website of Madiha a AI/ML Anthusiast Developer with over 5+ years of experience 😎",
+    "Portfolio website of Madiha a AI/ML Anthusiast Developer😎",
   generator: "mj dev",
 };
 

@@ -242,7 +242,7 @@ export default function Contact() {
                       Address
                     </h4>
                     <p className="text-white">
-                      Sawer Mutwali Khan, Bagh AJK
+                      Islamabad, Pakistan
                     </p>
                   </div>
                 </div>
