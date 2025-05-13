@@ -28,46 +28,55 @@ export default function Contact() {
     e.preventDefault();
     e.persist();
 
-    const formData = new FormData(e.target);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
-    try {
-      const response = await fetch("https://getform.io/f/aejjgkxb", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+
+  const formData = new FormData(e.target);
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const message = formData.get("message");
+
+  try {
+    const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        service_id: "service_4f3rqr3",  // Replace with your service ID
+        template_id: "template_tqjkua7",  // Replace with your template ID
+        user_id: "E5Qlasqg4eVrNnqJV",  // Replace with your public API key
+        template_params: {
           name,
           email,
           message,
-        }),
-      });
+        },
+      }),
+    });
 
-      if (response.ok) {
-        Swal.fire({
-          title: "Mail Sent!",
-          text: "I'll get back to you soon😉.",
-          icon: "success",
-          timer: 1500,
-          showConfirmButton: false,
-        });
-        setLoading(false);
-        e.target.reset();
-      }
-    } catch (error) {
-      setLoading(false);
-      e.target.reset();
+    if (response.ok) {
       Swal.fire({
-        title: "Failed to send message!",
-        text: "Please try again later🥲",
-        icon: "error",
+        title: "Mail Sent!",
+        text: "I'll get back to you soon😉.",
+        icon: "success",
         timer: 1500,
         showConfirmButton: false,
       });
+      setLoading(false);
+      e.target.reset();
     }
-  };
+  } catch (error) {
+    setLoading(false);
+    e.target.reset();
+    Swal.fire({
+      title: "Failed to send message!",
+      text: "Please try again later🥲",
+      icon: "error",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+  }
+};
+
+  
 
   return (
     <section id="contact" className="py-20 bg-gray-900">
