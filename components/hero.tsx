@@ -83,9 +83,9 @@ export default function Hero() {
                 <Typical
                   steps={[
                     "Computer Science Graduate",
-                    "AI/ML Enthusiast",
-                    "Web Developer",
-                    "Graphic Designer",
+                    "AI/ML Engineer",
+                    "Python Web Developer",
+                    
                   ]}
                   loop={Number.POSITIVE_INFINITY}
                 />
